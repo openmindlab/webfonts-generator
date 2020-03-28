@@ -271,6 +271,14 @@ webfontsGenerator({
 })
 ```
 
+## skipHashNames
+
+Type: `boolean`
+<br>
+Default: `false`
+
+It is possible to skip hash suffix in fontName included in css template.
+
 ## License
 
 Public domain, see the `LICENCE` file.
