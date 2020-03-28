@@ -1,5 +1,6 @@
 # webfonts-generator
 
+This package is a fork of https://github.com/sunflowerdeath/webfonts-generator
 
 [![Build Status](https://travis-ci.org/sunflowerdeath/webfonts-generator.svg?branch=master)](https://travis-ci.org/sunflowerdeath/webfonts-generator)
 
