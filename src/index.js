@@ -28,6 +28,7 @@ var DEFAULT_OPTIONS = {
 	htmlTemplate: TEMPLATES.html,
 	types: ['eot', 'woff', 'woff2'],
 	order: ['eot', 'woff2', 'woff', 'ttf', 'svg'],
+	skipHashNames: false,
 	rename: function(file) {
 		return path.basename(file, path.extname(file))
 	},

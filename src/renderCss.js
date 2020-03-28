@@ -16,12 +16,21 @@ var calcHash = function(options) {
 }
 
 var makeUrls = function(options) {
-	var hash = calcHash(options)
-	var baseUrl = options.cssFontsUrl && options.cssFontsUrl.replace(/\\/g, '/')
-	var urls = _.map(options.types, function(type) {
-		var fontName = options.fontName + '.' + type + '?' + hash
-		return baseUrl ? urlJoin(baseUrl, fontName) : fontName
-	})
+	if (options.skipHashNames) {
+		var baseUrl = options.cssFontsUrl && options.cssFontsUrl.replace(/\\/g, '/')
+		var urls = _.map(options.types, function(type) {
+			var fontName = options.fontName + '.' + type
+			return baseUrl ? urlJoin(baseUrl, fontName) : fontName
+		})	
+	} else {
+		var hash = calcHash(options)
+		var baseUrl = options.cssFontsUrl && options.cssFontsUrl.replace(/\\/g, '/')
+		var urls = _.map(options.types, function(type) {
+			var fontName = options.fontName + '.' + type + '?' + hash 
+			return baseUrl ? urlJoin(baseUrl, fontName) : fontName
+		})
+	}
+
 	return _.object(options.types, urls)
 }
 
